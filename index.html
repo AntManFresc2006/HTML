@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .letrero {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="letrero"> </div>
+    <input type="Button" value="Cambiar color" id="btnColor">
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let colorFondo = '#F00';
+
+            document.getElementById('letrero').innerHTML = '<p class="letrero" id="parrafito">Hola que pasa</p>';
+
+            document.getElementById('btnColor').addEventListener('click', function () {
+
+                /*
+                if (colorFondo == '#F00') {
+                    colorFondo = '#Fa0';
+                }
+
+                else {
+                    colorFondo = '#F00';
+                }
+
+                */
+               colorFondo = (colorFondo == '#F00') ? colorFondo = '#Fa0': colorFondo = '#F00';
+                document.getElementById('parrafito').style.backgroundColor = colorFondo;
+
+                
+            })
+        })
+        /*function saludo(){
+            let nombre = prompt('dime tu nombre')
+            alert('Buenos dias '+nombre+".");
+        }*/
+
+    </script>
+
+</body>
+
+</html>
