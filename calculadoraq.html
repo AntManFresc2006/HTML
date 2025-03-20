@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="text" id="num1">  
+  <input type="text" id="num2"> 
+  <input type="button" value="+" id="sumar"> 
+  <input type="button" value="-" id="restar"> 
+  <input type="button" value="x" id="multiplicar"> 
+  <input type="button" value="%" id="dividir"> 
+
+  <span id="resultado">=</span>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        document.getElementById('sumar').addEventListener('click', function() {
+            let num1 = document.getElementById('num1').value*1;
+            let num2 = document.getElementById('num2').value*1;
+
+            document.getElementById('resultado').innerHTML = num1+num2;
+
+        });
+
+        document.getElementById('restar').addEventListener('click', function() {
+            let num1 = document.getElementById('num1').value*1;
+            let num2 = document.getElementById('num2').value*1;
+
+            document.getElementById('resultado').innerHTML = num1-num2;
+
+        });
+
+        document.getElementById('multiplicar').addEventListener('click', function() {
+            let num1 = document.getElementById('num1').value*1;
+            let num2 = document.getElementById('num2').value*1;
+
+            document.getElementById('resultado').innerHTML = num1*num2;
+
+        });
+
+        document.getElementById('dividir').addEventListener('click', function() {
+            let num1 = document.getElementById('num1').value*1;
+            let num2 = document.getElementById('num2').value*1;
+
+            document.getElementById('resultado').innerHTML = num1/num2;
+
+        });
+    });
+</script>
+
+</body>
+</html>
