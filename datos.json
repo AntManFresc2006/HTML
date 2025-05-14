@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Portátil UltraSlim",
+    "categoria": "Tecnología",
+    "precio": 899.99,
+    "stock": 15,
+    "proveedor": "TecnoWorld",
+    "fecha_lanzamiento": "2023-05-15",
+    "valoracion": 4.5,
+    "disponible": true,
+    "caracteristicas": ["8GB RAM", "256GB SSD", "Intel i5"]
+  },
+  {
+    "id": 2,
+    "nombre": "Smartphone X200",
+    "categoria": "Tecnología",
+    "precio": 699.50,
+    "stock": 8,
+    "proveedor": "MobileTech",
+    "fecha_lanzamiento": "2023-08-22",
+    "valoracion": 4.2,
+    "disponible": true,
+    "caracteristicas": ["6.5\" AMOLED", "128GB", "5G"]
+  },
+  {
+    "id": 3,
+    "nombre": "Auriculares Bluetooth",
+    "categoria": "Audio",
+    "precio": 59.99,
+    "stock": 42,
+    "proveedor": "SoundMaster",
+    "fecha_lanzamiento": "2023-03-10",
+    "valoracion": 4.7,
+    "disponible": true,
+    "caracteristicas": ["Cancelación ruido", "20h batería", "IPX4"]
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor 27\" 4K",
+    "categoria": "Tecnología",
+    "precio": 349.95,
+    "stock": 5,
+    "proveedor": "DisplayPro",
+    "fecha_lanzamiento": "2023-01-30",
+    "valoracion": 4.8,
+    "disponible": true,
+    "caracteristicas": ["HDR10", "99% sRGB", "FreeSync"]
+  },
+  {
+    "id": 5,
+    "nombre": "Teclado Mecánico",
+    "categoria": "Periféricos",
+    "precio": 89.99,
+    "stock": 23,
+    "proveedor": "KeyTech",
+    "fecha_lanzamiento": "2023-07-14",
+    "valoracion": 4.3,
+    "disponible": true,
+    "caracteristicas": ["Switches Red", "RGB", "Anti-ghosting"]
+  },
+  {
+    "id": 6,
+    "nombre": "Ratón Gaming",
+    "categoria": "Periféricos",
+    "precio": 49.99,
+    "stock": 0,
+    "proveedor": "GameGear",
+    "fecha_lanzamiento": "2023-09-05",
+    "valoracion": 4.1,
+    "disponible": false,
+    "caracteristicas": ["16000DPI", "7 botones", "Ergonómico"]
+  },
+  {
+    "id": 7,
+    "nombre": "Disco SSD 1TB",
+    "categoria": "Componentes",
+    "precio": 129.99,
+    "stock": 17,
+    "proveedor": "StorageKing",
+    "fecha_lanzamiento": "2023-04-18",
+    "valoracion": 4.9,
+    "disponible": true,
+    "caracteristicas": ["NVMe", "3500MB/s", "5 años garantía"]
+  },
+  {
+    "id": 8,
+    "nombre": "Altavoz Inteligente",
+    "categoria": "Audio",
+    "precio": 79.99,
+    "stock": 31,
+    "proveedor": "SmartAudio",
+    "fecha_lanzamiento": "2023-02-28",
+    "valoracion": 3.9,
+    "disponible": true,
+    "caracteristicas": ["Asistente vocal", "360° sonido", "WiFi/Bluetooth"]
+  },
+  {
+    "id": 9,
+    "nombre": "Cámara Web 4K",
+    "categoria": "Vídeo",
+    "precio": 119.50,
+    "stock": 12,
+    "proveedor": "VideoPro",
+    "fecha_lanzamiento": "2023-06-22",
+    "valoracion": 4.4,
+    "disponible": true,
+    "caracteristicas": ["HDR", "Micrófono integrado", "Autoenfoque"]
+  },
+  {
+    "id": 10,
+    "nombre": "Tablet Dibujo",
+    "categoria": "Tecnología",
+    "precio": 249.99,
+    "stock": 7,
+    "proveedor": "ArtDigital",
+    "fecha_lanzamiento": "2023-10-15",
+    "valoracion": 4.6,
+    "disponible": true,
+    "caracteristicas": ["10\"", "4096 niveles presión", "Sin batería"]
+  }
+]

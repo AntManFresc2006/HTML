@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <title>Catálogo de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr {
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+        tr:hover {
+    background-color: #e6f7ff;
+    transform: scale(1.05); /* Scale up the row on hover */
+}
+        .disponible {
+            color: green;
+            font-weight: bold;
+        }
+        .no-disponible {
+            color: red;
+        }
+        .stock-bajo {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">David Postigo Rodriguez</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">6600.00000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">David Postigo Rodriguez</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x0101008C28B52888867040AC3672CEB12252AB</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <h1>Catálogo Completo de Productos</h1>
+    <button onclick="cargarDatos()">Cargar Productos</button>
+    <div id="tabla-datos"></div>
+
+    <script>
+        function cargarJSON(url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                if(xhr.status === 200) {
+                    callback(JSON.parse(xhr.responseText));
+                } else {
+                    document.getElementById("tabla-datos").innerHTML = 
+                        `<p style='color:red'>Error al cargar los datos. HTTP Status: ${xhr.status}</p>`;
+                }
+            };
+            xhr.send();
+        }
+
+        function crearTabla(paises) {
+            let html = `
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Capital</th>
+                        <th>Poblacion</th>
+                        <th>Bandera</th>
+                    </tr>
+            `;
+            
+            for(let i = 0; i < paises.length; i++) {
+                let p = paises[i];
+                let bandera = p.flags.png;
+                
+                html += `
+                    <tr>
+                        <td>${p.name.official}</td>
+                        <td>${p.capital ? p.capital[0] : 'N/A'}</td>
+                        <td>${p.population == 0 ? 'Aqui no vive ni el tato' : p.population}</td>
+                        <td><img src="${bandera}"></td>
+                    </tr>
+                `;
+            }
+            
+            html += `</table>`;
+            document.getElementById("tabla-datos").innerHTML = html;
+        }
+
+        function cargarDatos() {
+            cargarJSON('https://restcountries.com/v3.1/all', crearTabla);
+        }
+    </script>
+</body>
+</html>
